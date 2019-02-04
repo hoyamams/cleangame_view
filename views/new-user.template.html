@@ -1,0 +1,63 @@
+<!--
+<div ng-controller="UserCtrl">
+ <form class="px-4 py-3">
+        <div class="form-group">
+          <label for="FormEmailLogin1">Email address</label>
+          <input ng-model="login.mail" type="email" class="form-control" id="FormEmailLogin1" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label for="FormEmailPasswd1">Password</label>
+          <input ng-model="login.passwd"type="password" class="form-control" id="FormEmailPasswd1" placeholder="Password">
+        </div>
+        <div class="alert alert-danger" ng-if="msg.errorLogin" role="alert" style="font-size: 8pt">
+          {{msg.errorLogin}}
+        </div>
+        <span type="button" class="btn btn-primary" ng-click="logIn(login)">Sign in</span>
+      </form>
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item" ng-click="newUser()">Usuário novo? Cadastre-se</a>
+      <span style="cursor: pointer" class="dropdown-item">Recuperar senha</a>
+  
+ </div>
+-->
+        
+       <div class="row" style="padding: 10pt 10pt 10pt 10pt">
+            <div class="col-4"></div>
+            <div class="col-4">
+
+                    <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">Please login or create new account!</h4>
+                            <p></p>                           
+                    </div>
+
+            </div>
+            <div class="col-4"></div>
+       </div> 
+
+        
+        <div class="row" >
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form class="px-4 py-3">
+                        <div class="form-group">
+                          <label for="FormEmailLogin1">Email address</label>
+                          <input ng-model="login.mail" type="email" class="form-control" id="FormEmailLogin1" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                          <label for="FormEmailPasswd1">Password</label>
+                          <input ng-model="login.passwd"type="password" class="form-control" id="FormEmailPasswd1" placeholder="Password">
+                        </div>
+                        <div class="alert alert-danger" ng-if="msg.errorLogin" role="alert" style="font-size: 8pt">
+                          {{msg.errorLogin}}
+                        </div>
+                        <span type="button" class="btn btn-primary" ng-click="logIn(login)">Sign in</span>
+                      </form>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item" ng-click="newUser()">New user account</a>
+                      <span style="cursor: pointer" class="dropdown-item">Reset password</a>
+             </div>
+             <div class="col-4"></div>
+
+
+        </div>
+   

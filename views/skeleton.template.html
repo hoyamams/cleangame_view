@@ -1,0 +1,125 @@
+
+<div class="row defaultHead">
+    <div class="col-6">
+     <img src="./lib/img/mini_logo_transparent_bord.png">      
+    </div>
+    <div class="col-6" style="text-align: right">
+        <div ng-if="user.isLoged">
+          <span style="cursor: pointer" ng-click="loadMainContent('rooms')">{{user.mail}}</span>
+          <button class="btn btn-primary"ng-click="logOut()">logout</span>
+        </div>
+        <div ng-if="!user.isLoged">
+                
+                
+
+                <div class="btn-group">
+                        <button ng-click="openLoginToggle()" type="button" class="btn btn-primary dropdown-toggle" id="dropdown-toggle-login"  aria-haspopup="true" aria-expanded="false">
+                          log in
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                                <form class="px-4 py-3">
+                                        <div class="form-group">
+                                          <label for="FormEmailLogin1">Email address</label>
+                                          <input ng-model="login.mail" type="email" class="form-control" id="FormEmailLogin1" placeholder="email@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="FormEmailPasswd1">Password</label>
+                                          <input ng-model="login.passwd"type="password" class="form-control" id="FormEmailPasswd1" placeholder="Password">
+                                        </div>
+                                        <div class="alert alert-danger" ng-if="msg.errorLogin" role="alert" style="font-size: 8pt">
+                                          {{msg.errorLogin}}
+                                        </div>
+                                        <span type="button" class="btn btn-primary" ng-click="logIn(login)">Sign in</span>
+                                      </form>
+                                      <div class="dropdown-divider"></div>
+                                      <a href="#" class="dropdown-item" ng-click="newUser()">New user account</a>
+                                      <span style="cursor: pointer" class="dropdown-item">Reset password</a>
+                        </div>
+                      </div>
+            
+                
+                
+
+         </div>
+           
+        
+    </div>
+</div>
+
+<div class="row" class="mainDiv">
+  <div class="col-12">
+       <div data-ng-include="divmaincontent"></div>
+  </div>
+</div>
+
+<div class="row defaultFooter">
+        <div class="col-6"></div>
+        <div class="col-6">          
+        </div>
+</div>
+
+
+
+<!--Modais uso diversos //-->
+<div id="modalNewUser" ng-controller="UserCtrl" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New user</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <!--Formulario de cadastro novos usuarios //-->
+        <div class="form-group">
+          <label for="formGroupName">Name</label>
+          <input ng-model="user.name" type="text" class="form-control" id="formGroupName">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleEmail">Mail</label>
+          <input ng-model="user.mail" type="email" class="form-control" id="formGroupExampleEmail" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExamplePasswd">Password</label>
+          <input ng-model="user.passwd" type="password" class="form-control" id="formGroupExamplePasswd">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExamplePasswd2">Confirm password</label>
+          <input ng-model="user.passwd2" type="password" class="form-control" id="formGroupExamplePasswd2">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" ng-click="newUserInsert(user)">Criar Conta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modais uso diversos //-->
+<div id="modalSharedRoom" ng-controller="RoomCtrl" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Shared</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Link: {{ linkshared }}         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

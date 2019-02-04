@@ -1,0 +1,62 @@
+<div class="row" ng-controller="MediumRoomCtrl">
+    <div class="col-2">
+        <div data-ng-include="'./views/profile.template.html'"></div>
+    </div>
+    <div class="col-10">
+        <div class="card">
+            <div class="card-header">
+                <h1>{{ label.newEasyRoomTitle }}</h1>
+                
+                <ul class="nav nav-tabs card-header-tabs" style="cursor: pointer">
+                        <li class="nav-item" ng-click="moveRoomTab()">
+                            <span class="nav-link" ng-class="{'active' : step1}">Room</span>
+                        </li>
+                        <li class="nav-item" ng-click="moveQuestionsTab()">
+                            <span class="nav-link" ng-class="{'active' : step2}">Status</span>
+                        </li>
+                    </ul>
+            </div>
+            <div class="card-body">
+
+                <form ng-if="step1">
+                    <div class="form-group">
+                        <label for="InputNameRoom">{{label.nameRoom}}:</label>
+                        <input ng-model="room.name" type="text" class="form-control" id="InputNameRoom" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{ label.descriptionRoom }}:</label>
+                        <textarea ng-model="room.description" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-group">
+                            <label for="InputGitRoom">{{label.git}}:</label>
+                            <input ng-model="room.git" type="text" class="form-control" id="InputGitRoom" placeholder="">
+                    </div>
+
+                    <div class="form-group form-check">
+                        <input ng-model="room.public" type="checkbox" class="form-check-input" id="isPublicRoom">
+                        <label class="form-check-label" for="isPublicRoom">{{label.isPublicRoom}}</label>
+                    </div>
+
+                   
+                    <a href="#" ng-click="createRoom(room)" class="btn btn-success">
+                        {{label.btnCreateRoom}}
+                    </a>
+
+                </form>
+                <div ng-if="step2">
+                   <h2>Clonagem: {{ cloneStatus }}</h2>
+                   <h2>Análise PMD:{{ pmdStatus }}</h2>
+                   <h2>Criação Questões:{{ makeQuestionStatus }}</h2>
+                </div>             
+               
+            </div>
+        </div>
+        <!--FECHA CARD //-->
+
+      <br><br>
+
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ label.newRoom }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="InputNameRoom">{{label.name}}:</label>
+                            <input ng-model="room.name" type="text" class="form-control" id="InputNameRoom" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputDescriptionRoom">{{ label.description }}:</label>
+                            <textarea ng-model="room.description" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                                placeholder=""></textarea>
+                            <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                        </div>
+                        <div class="row alert alert-success">
+                            <div class="col-2" style="padding-top: 10px">
+                                <img src="./lib/img/gitLogo.svg" style="width: 100%">
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group">
+                                    <label for="InputGitUrlRoom">{{label.gitUrl}}:</label>
+                                    <input ng-model="room.gitUrl" type="text" class="form-control" id="InputGitUrlRoom" placeholder="Ex: https://github.com/github/maven-plugins.git">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <input ng-model="room.public" type="checkbox" class="form-check-input" id="isPublicRoom">
+                            <label class="form-check-label" for="isPublicRoom">{{label.roomPublic}}</label>
+                        </div>
+             
+                        <div class="form-group form-check">
+                               Tipo de sala:
+                                <label>
+                                        <input type="radio" ng-model="room.type" value="EASY">
+                                        Easy
+                                      </label>
+                                      <label>
+                                        <input type="radio" ng-model="room.type" value="MEDIUM">
+                                        Medium
+                                      </label>
+                                      <label>
+                                        <input type="radio" ng-model="room.type" value="HARD">
+                                        Hard
+                                      </label>
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{label.cancel}}</button>
+                    <button type="button" class="btn btn-primary" ng-click="insertNewRoom(room)">{{label.saveNewRoom}}</button>
+                </div>
+            </div>
+        </div>
+    </div>

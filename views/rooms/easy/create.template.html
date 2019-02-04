@@ -1,0 +1,143 @@
+<div class="row" ng-controller="EasyRoomCtrl">
+    <div class="col-2">
+        <div data-ng-include="'./views/profile.template.html'"></div>
+    </div>
+    <div class="col-10">
+        <div class="card">
+            <div class="card-header">
+                <h1>{{ label.newEasyRoomTitle }}</h1>
+                
+                <ul class="nav nav-tabs card-header-tabs" style="cursor: pointer">
+                        <li class="nav-item" ng-click="moveRoomTab()">
+                            <span class="nav-link" ng-class="{'active' : step1}">Room</span>
+                        </li>
+                        <li class="nav-item" ng-click="moveQuestionsTab()">
+                            <span class="nav-link" ng-class="{'active' : step2}">Questions</span>
+                        </li>
+                    </ul>
+            </div>
+            <div class="card-body">
+
+                <form ng-if="step1">
+                    <div class="form-group">
+                        <label for="InputNameRoom">{{label.nameRoom}}:</label>
+                        <input ng-model="room.name" type="text" class="form-control" id="InputNameRoom" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{ label.descriptionRoom }}:</label>
+                        <textarea ng-model="room.description" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <input ng-model="room.public" type="checkbox" class="form-check-input" id="isPublicRoom">
+                        <label class="form-check-label" for="isPublicRoom">{{label.isPublicRoom}}</label>
+                    </div>
+
+                    <a href="#" ng-click="createRoom(room)" class="btn btn-success">
+                        {{label.btnCreateRoom}}
+                    </a>
+
+                </form>
+
+                <form ng-if="step2" novalidate>
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{label.newQuestion}}:</label>
+                        <textarea ng-model="question.ask" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-auto my-1">
+                            <label for="InputDescriptionRoom" class="mr-sm-2"> Select level question:</label>
+                        </div>
+                        <div class="col-auto my-1">
+                            <select ng-model="question.level" class="custom-select mr-sm-10">
+                                <option ng-value="1">Easy</option>
+                                <option ng-value="2">Medium</option>
+                                <option ng-value="3">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">Tip:</label>
+                        <textarea ng-model="question.tip" type="text" class="form-control" id="InputDescriptionTIP" 
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">Tip</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">Tip 2:</label>
+                        <textarea ng-model="question.tip2" type="text" class="form-control" id="InputDescriptionTIP"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">Tip</small>
+                    </div>
+                 
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{label.correctAlternative}}:</label>
+                        <textarea ng-model="question.correct" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{label.fakeAlternative}}:</label>
+                        <textarea ng-model="question.fake1" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{label.fakeAlternative}}:</label>
+                        <textarea ng-model="question.fake2" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDescriptionRoom">{{label.fakeAlternative}}:</label>
+                        <textarea ng-model="question.fake3" type="text" class="form-control" id="InputDescriptionRoom" aria-describedby="emailHelp"
+                            placeholder=""></textarea>
+                        <small id="InputDescriptionRoom" class="form-text text-muted">{{label.descriptionHelp}}</small>
+                    </div>
+
+
+
+                    <a href="#" ng-click="insertQuestion(question)" class="btn btn-success">
+                        {{label.btnInsertQuestion}}
+                    </a>
+
+                </form>
+
+
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Question</th>
+                            <th scope="col">Action</th>                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="q in questions track by $index">
+                                 <td>{{$index + 1}}</td> 
+                                 <td>{{q.ask}}</td>
+                                 <td><a href="#" class="btn btn-success" ng-click="editQuestion(q)">edit</a> </td>                              
+                            </tr>
+                        </tbody>
+                 </table>
+
+
+
+            </div>
+        </div>
+        <!--FECHA CARD //-->
+
+      <br><br>
+
+    </div>
+</div>

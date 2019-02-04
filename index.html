@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="cleangame">
+
+<head>
+    <title>Cleangame</title>
+    <meta charset="utf-8">
+    
+    <!--<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">//-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    CSS -->
+
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="./lib/app.css">
+    
+
+    
+</head>
+
+<body> 
+   
+    <div style="color:magenta" class="usernameFlutuante" id="userremoto1"></div>
+    <div style="color: orangered " class="usernameFlutuante" id="userremoto2"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto3"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto4"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto5"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto6"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto7"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto8"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto9"></div>
+    <div style=" " class="usernameFlutuante" id="userremoto10"></div>
+
+    <div class="h-100">
+        <div class="h-100" ng-view></div>
+    </div>
+   
+
+ <!--Angular local  
+ <script src="./lib/js/angular.min.js"></script>//-->
+
+    <!--Include angular and angular libs 
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>//-->
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+    
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+
+    <script type="text/javascript" src="./lib/syntaxhlighter/scripts/XRegExp.js"></script> <!-- XRegExp is bundled with the final shCore.js during build -->
+	<script type="text/javascript" src="./lib/syntaxhlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="./lib/syntaxhlighter/scripts/shBrushJava.js"></script>
+	
+	<script type="text/javascript" src="./lib/js/md5.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="./lib/syntaxhlighter/styles/shCore.css"/>
+	<link type="text/css" rel="Stylesheet" href="./lib/syntaxhlighter/styles/shThemeDefault.css" />
+	
+
+
+
+    <script src="./app.js"></script>
+   
+         
+
+    <!--Include angular controlers //-->
+    <script type="text/javascript" src="./ctrl/home.ctrl.js"></script>
+    <script type="text/javascript" src="./ctrl/skeleton.ctrl.js"></script>
+	<script type="text/javascript" src="./ctrl/rooms.ctrl.js"></script>
+	<script type="text/javascript" src="./ctrl/easy-room.ctrl.js"></script>
+	<script type="text/javascript" src="./ctrl/medium-room.ctrl.js"></script>
+    <script type="text/javascript" src="./ctrl/room.ctrl.js"></script>
+    <script type="text/javascript" src="./ctrl/user.ctrl.js"></script>
+    <script type="text/javascript" src="./ctrl/profile.ctrl.js"></script>
+
+    <!--Include angular services //-->
+    <script type="text/javascript" src="./services/user.service.js"></script>
+    <script type="text/javascript" src="./services/room.service.js"></script>
+	<script type="text/javascript" src="./services/easy-room.service.js"></script>
+	<script type="text/javascript" src="./services/medium-room.service.js"></script>
+    <script type="text/javascript" src="./services/question.service.js"></script>
+    <script type="text/javascript" src="./services/socket.service.js"></script>
+    <script type="text/javascript" src="./services/team.service.js"></script>
+    
+    
