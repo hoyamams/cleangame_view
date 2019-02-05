@@ -74,7 +74,8 @@ app.controller('RoomsCtrl', function ($rootScope, $location, $scope, $RoomServic
   }
 
   $scope.createMediumRoom = function(){
-    $("#modalNewRoom").modal('hide');
+    $rootScope.createRoom = true;
+    $("#modalNewRoom").modal('hide');    
     $rootScope.loadMainContent('rooms/medium/create');
   }
 
@@ -118,7 +119,7 @@ app.controller('RoomsCtrl', function ($rootScope, $location, $scope, $RoomServic
       if(room.type == "EASY"){
         $rootScope.loadMainContent('rooms/easy/room');
       }else{
-        $rootScope.loadMainContent('rooms/medium/medium-room');
+        $rootScope.loadMainContent('rooms/medium/room');
       }
     })
 

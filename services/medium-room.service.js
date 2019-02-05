@@ -1,4 +1,4 @@
-app.service('$MediumRoomService', ['$http', 'ApiPath', function ($http, ApiPath) {
+app.service('$MediumRoomService', ['$http', 'ApiPath','$TeamService', function ($http, ApiPath, $TeamService) {
 
   
     //Mantem dados do usuario autenticado
@@ -40,7 +40,9 @@ app.service('$MediumRoomService', ['$http', 'ApiPath', function ($http, ApiPath)
             }
         }
 
-        return $http.get(ApiPath + '/mediumroom/'+this.getActiveRoom().id+'/question/', config).then(function (response) {
+        console.log("TEAM SERVICE",$TeamService);
+
+        return $http.get(ApiPath + '/mediumroom/'+this.getActiveRoom().id+'/question/'+$TeamService.getActiveTeam().id+"/", config).then(function (response) {
             return response;                         
         }).catch(function (err) {
             console.log("ERRO: Falha ao obter questão...",err)

@@ -136,10 +136,7 @@ app.controller('EasyRoomCtrl', function ($rootScope,Domain,$sce, $location, $sco
 
 }
 
-  //verifica se ativa modo (DESABILITADO)
-  if($RoomService.getActiveRoom().multiplayer){  
-     
-  }
+
 
 
 
@@ -310,7 +307,7 @@ app.controller('EasyRoomCtrl', function ($rootScope,Domain,$sce, $location, $sco
   }else{
   
     $EasyRoomService.setActiveRoom($RoomService.getActiveRoom());
-
+     
     setInterval(function(){
       $scope.$apply(function () {
         $scope.panel.time++;
